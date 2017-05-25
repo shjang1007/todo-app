@@ -4,7 +4,7 @@ import TodoList from "./todo_list/todo_list";
 const App = () => {
   return (
     <div className="app-container">
-      <h1>Special Todo App for Taplytics</h1>
+      <h1>Todo App from Brian to Taplytics</h1>
       <TodoList/>
     </div>
   );
