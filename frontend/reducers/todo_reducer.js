@@ -5,22 +5,7 @@ import { RECEIVE_TODOS,
           RECEIVE_TODO,
           REMOVE_TODO } from "../actions/todo_actions";
 
-const initialState = {
-  1: {
-    id: 1,
-    title: "wash car",
-    body: "with soap",
-    done: false
-  },
-  2: {
-    id: 2,
-    title: "wash dog",
-    body: "with shampoo",
-    done: true
-  },
-};
-
-const todoReducer = (oldState = initialState, action) => {
+const todoReducer = (oldState = {}, action) => {
   let newState;
 
   switch (action.type) {
