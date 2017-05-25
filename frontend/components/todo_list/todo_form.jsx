@@ -25,10 +25,10 @@ class TodoForm extends Component {
 handleSubmit(e) {
   e.preventDefault();
   const todo = merge({}, this.state, { id: new Date().getTime() });
-  this.props.receiveSingleTodo(todo);
+  this.props.receiveTodo(todo);
   this.setState({
     title: "",
-    body: ""
+    description: ""
   });
 }
 

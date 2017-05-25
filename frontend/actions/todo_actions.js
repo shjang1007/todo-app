@@ -1,6 +1,8 @@
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
-export const RECEIVE_SINGLE_TODO = "RECEIVE_SINGLE_TODO";
+export const RECEIVE_TODO = "RECEIVE_TODO";
+export const REMOVE_TODO = "REMOVE_TODO";
 
+// Don't need it for this project, but possibly for the future backend implementation
 export const receiveTodos = (todos) => {
   return {
     type: RECEIVE_TODOS,
@@ -8,9 +10,16 @@ export const receiveTodos = (todos) => {
   };
 };
 
-export const receiveSingleTodo = (todo) => {
+export const receiveTodo = (todo) => {
   return {
-    type: RECEIVE_SINGLE_TODO,
+    type: RECEIVE_TODO,
+    todo
+  };
+};
+
+export const removeTodo = (todo) => {
+  return {
+    type: REMOVE_TODO,
     todo
   };
 };

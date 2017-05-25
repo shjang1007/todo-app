@@ -1,7 +1,9 @@
 import React from "react";
 import { merge } from "lodash";
 
-import { RECEIVE_TODOS, RECEIVE_SINGLE_TODO } from "../actions/todo_actions";
+import { RECEIVE_TODOS,
+          RECEIVE_TODO,
+          REMOVE_TODO } from "../actions/todo_actions";
 
 const initialState = {
   1: {
@@ -28,9 +30,13 @@ const todoReducer = (oldState = initialState, action) => {
         newState[todo.id] = todo;
       });
       return newState;
-    case RECEIVE_SINGLE_TODO:
+    case RECEIVE_TODO:
       newState = {[action.todo.id]: action.todo};
       return merge({}, oldState, newState);
+    case REMOVE_TODO:
+      newState = merge({}, oldState);
+      delete newState[action.todo.id];
+      return newState;
     default:
       return oldState;
   }

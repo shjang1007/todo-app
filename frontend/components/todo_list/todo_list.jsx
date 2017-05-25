@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { receiveTodos, receiveSingleTodo } from "../../actions/todo_actions";
+import { removeTodo, receiveTodo } from "../../actions/todo_actions";
 import TodoForm from "./todo_form";
+import TodoListItem from "./todo_list_item";
 
 class TodoList extends Component {
   constructor(props) {
@@ -12,7 +13,10 @@ class TodoList extends Component {
   render() {
     const { todos } = this.props;
     const todoItems = todos.map( (todo) => (
-      <li key={ todo.id }>{ todo.title }</li>
+      <TodoListItem key={ todo.id }
+                  todo={ todo }
+                  receiveTodo={ this.props.receiveTodo }
+                  removeTodo={ this.props.removeTodo }/>
     ));
 
     return(
@@ -20,8 +24,7 @@ class TodoList extends Component {
         <ul>
           { todoItems }
         </ul>
-
-        <TodoForm receiveSingleTodo={ this.props.receiveSingleTodo }/>
+        <TodoForm receiveTodo={ this.props.receiveTodo }/>
       </div>
     );
   }
@@ -38,8 +41,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    receiveTodos: () => dispatch(receiveTodos()),
-    receiveSingleTodo: (todo) => (dispatch(receiveSingleTodo(todo)))
+    receiveTodo: (todo) => (dispatch(receiveTodo(todo))),
+    removeTodo: (todo) => (dispatch(removeTodo(todo)))
   });
 };
 
