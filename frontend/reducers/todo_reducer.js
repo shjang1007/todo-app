@@ -1,5 +1,5 @@
 import React from "react";
-import { merge } from "lodash"
+import { merge } from "lodash";
 
 import { RECEIVE_TODOS, RECEIVE_SINGLE_TODO } from "../actions/todo_actions";
 
@@ -17,7 +17,6 @@ const initialState = {
     done: true
   },
 };
-
 
 const todoReducer = (oldState = initialState, action) => {
   let newState;

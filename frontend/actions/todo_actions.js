@@ -8,7 +8,7 @@ export const receiveTodos = (todos) => {
   };
 };
 
-export const receiveTodo = (todo) => {
+export const receiveSingleTodo = (todo) => {
   return {
     type: RECEIVE_SINGLE_TODO,
     todo
