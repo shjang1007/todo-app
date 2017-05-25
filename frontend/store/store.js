@@ -8,7 +8,7 @@ const configureStore = (preloadedState = {}) => {
   );
 
   store.subscribe(() => {
-    // localStorage.state = JSON.stringify(store.getState());
+    localStorage.state = JSON.stringify(store.getState());
   });
 
   return store;

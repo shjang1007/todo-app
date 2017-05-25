@@ -7,8 +7,8 @@ import Root from "./components/root";
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
 
-  const preloadedState = {}; //localStorage.state ?
-    //JSON.parse(localStorage.state) : {};
+  const preloadedState = localStorage.state ?
+    JSON.parse(localStorage.state) : {};
   const store = configureStore(preloadedState);
 
   ReactDOM.render(<Root store={ store }/>, root);
