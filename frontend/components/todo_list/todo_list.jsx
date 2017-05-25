@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { receiveTodos, receiveSingleTodo } from "../../actions/todo_actions";
+import TodoForm from "./todo_form";
 
 class TodoList extends Component {
   constructor(props) {
@@ -10,13 +11,18 @@ class TodoList extends Component {
 
   render() {
     const { todos } = this.props;
-    debugger
-    const todoItems = todos.map( (todo) => <li>{ todo.id }</li>);
+    const todoItems = todos.map( (todo) => (
+      <li key={ todo.id }>{ todo.title }</li>
+    ));
 
     return(
-      <ul>
-        { todoItems }
-      </ul>
+      <div>
+        <ul>
+          { todoItems }
+        </ul>
+
+        <TodoForm receiveSingleTodo={ this.props.receiveSingleTodo }/>
+      </div>
     );
   }
 }
