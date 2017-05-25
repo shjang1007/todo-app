@@ -39,7 +39,7 @@ handleSubmit(e) {
           <input name="title"
                 className="input"
                 value={this.state.title}
-                placeholder="Enter a todo"
+                placeholder="Enter your todo!"
                 onChange={this.update("title")}
                 required/>
         </label>
@@ -49,10 +49,10 @@ handleSubmit(e) {
             cols="18"
             rows="4"
             value={this.state.description}
-            placeholder="Enter description on a todo"
+            placeholder="Enter description to your todo!"
             onChange={this.update("description")}></textarea>
         </label>
-        <button className="create-button">Create Todo</button>
+        <button className="create-btn">Create Todo</button>
       </form>
     );
   }

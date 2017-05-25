@@ -40,9 +40,9 @@ class TodoListItem extends Component {
     let detail;
     if (this.state.detail) {
       detail = (
-        <div>
+        <div className="todo-detail">
           <p className="todo-description">{ description }</p>
-          <button className="delete-button"
+          <button className="delete-btn"
                   onClick={ this.removeTodo }>
             Delete Todo
           </button>
@@ -55,7 +55,7 @@ class TodoListItem extends Component {
         <div className="todo-header">
           <h3><a onClick={ this.toggleDetail }>{ title }</a></h3>
           <button
-            className={ done ? "done" : "undone" }
+            className={ done ? "done-btn" : "undone-btn" }
             onClick={ this.toggleDone }>
             { done ? "Undo" : "Done" }
           </button>
